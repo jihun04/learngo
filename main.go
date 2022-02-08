@@ -3,18 +3,16 @@ package main
 import (
 	"fmt"
 	"learngo/accounts"
-	"log"
 )
 
 func checkErr(err error) {
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Println(err)
 	}
 }
 
 func main() {
-	account := accounts.NewAccount("jihun")
-	checkErr(account.Deposit(10))
-	checkErr(account.Withdraw(11))
-	fmt.Println(account.GetBalance())
+	account := accounts.NewAccount("jihun04")
+	account.ChangeOwner("nine")
+	fmt.Println(account)
 }

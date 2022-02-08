@@ -1,6 +1,9 @@
 package accounts
 
-import "errors"
+import (
+	"errors"
+	"log"
+)
 
 // Account struct
 type Account struct {
@@ -24,8 +27,13 @@ func (a *Account) Deposit(amount int) error {
 }
 
 // Return balance
-func (a *Account) GetBalance() int {
+func (a *Account) Balance() int {
 	return a.balance
+}
+
+// Return owner
+func (a *Account) Owner() string {
+	return a.owner
 }
 
 // Withdraw balance
@@ -38,4 +46,15 @@ func (a *Account) Withdraw(amount int) error {
 	}
 	a.balance -= amount
 	return nil
+}
+
+// Change owner
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+// Called by go
+func (a *Account) String() string {
+	log.Fatalln(errors.New("err"))
+	return "Whatever else"
 }
