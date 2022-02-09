@@ -2,17 +2,15 @@ package main
 
 import (
 	"fmt"
-	"learngo/accounts"
+	"learngo/mydict"
 )
 
-func checkErr(err error) {
+func main() {
+	dictionary := mydict.Dictionary{"first": "First word"}
+	definition, err := dictionary.Search("second")
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
 	}
-}
-
-func main() {
-	account := accounts.NewAccount("jihun04")
-	account.ChangeOwner("nine")
-	fmt.Println(account)
 }

@@ -56,5 +56,5 @@ func (a *Account) ChangeOwner(newOwner string) {
 // Called by go
 func (a *Account) String() string {
 	log.Fatalln(errors.New("err"))
-	return "Whatever else"
+	return "Whatever"
 }
